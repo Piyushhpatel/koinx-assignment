@@ -12,21 +12,18 @@ async function fetchCryptoData() {
     });
 
     const coinsData = response.data;
-
-
+    
+    // Save each coin data into the database
     for (let coin of coinsData) {
-      await Coin.findOneAndUpdate(
-        { coin: coin.id }, 
-        {
-          currentPrice: coin.current_price, 
-          marketCap: coin.market_cap, 
-          Change24h: coin.price_change_percentage_24h, 
-        },
-        { upsert: true, new: true }
-      );
+      await Coin.create({
+        coin: coin.id,             
+        currentPrice: coin.current_price, 
+        marketCap: coin.market_cap, 
+        Change24h: coin.price_change_24h,
+      });
     }
 
-    console.log('Crypto data fetched and stored/updated successfully.');
+    console.log('Crypto data fetched and stored successfully.');
   } catch (error) {
     console.error('Error fetching crypto data:', error.message);
   }

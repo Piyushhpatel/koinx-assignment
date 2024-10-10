@@ -16,4 +16,9 @@ app.get("/", (req, res) => {
     res.send("Welcome to the Koinx API");
 });
 
+//Routes
+import coinRoutes from "./routes/coin.routes.js";
+
+app.use("/api/v1/coin", coinRoutes);
+
 export {app}
