@@ -2,11 +2,7 @@ import mongoose from "mongoose";
 
 const coinSchema = new mongoose.Schema(
     {
-        coinId: {
-            type: String,
-            required: true
-        },
-        name: {
+        coin: {
             type: String,
             required: true
         },
