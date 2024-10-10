@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "This is a backend application that fetched the current conversion and cryptorates every to hours and provide stats",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "\\"
+    "start": "node -r dotenv/config --experimental-json-modules src/index.js",
+    "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
   },
   "author": "Piyush Patel",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "mongoose": "^8.7.1"
