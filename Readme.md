@@ -106,3 +106,5 @@ Calculates the standard deviation of the price of a cryptocurrency based on the 
   	deviation: 4082.48
   }
   ```
+
+NOTE: The project is hosted on render. The backgroud job is working fine in local but is not working on deployment as it is hosted on free service on rendern and after 15 minutes of inactivity free instances goes to sleep so Job doesn't work in it however in local setup you can check the working of job functionality as well
